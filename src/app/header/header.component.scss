@@ -1,0 +1,11 @@
+@import "variables";
+
+.header--inner{
+	justify-content: space-between;
+	display: flex;
+}
+
+.header--title{
+	color: $white;
+	font-size: 3em;
+}

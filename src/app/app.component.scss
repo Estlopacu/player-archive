@@ -1,0 +1,11 @@
+@import "variables";
+
+header, footer{
+	background-color: $primary-color;
+	padding: $base-unit * 2 0;
+}
+
+main {
+	flex: 1;
+	flex-direction: column;
+}

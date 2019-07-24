@@ -1,0 +1,16 @@
+@import "variables";
+
+.search--inner{
+	font-size: 2rem;
+	padding: $base-unit * 2 0;
+}
+.search--form {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+.search--input {
+	padding: 1rem;
+	border: 1px solid $tertiary-color;
+}
