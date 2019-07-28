@@ -7,9 +7,9 @@
     "startApiServer": "node server",
     "start": "concurrently --kill-others \"npm run startApiServer\" \"npm run dev\"",
     "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "cypress open"
+    "testInConsole": "cypress run",
+    "test": "cypress open",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {

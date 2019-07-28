@@ -24,13 +24,14 @@ app.get('/player/:id', asyncHandler(async function (request, response) {
 
 	try {
 		let user = await axios.get(`${API_PLAYER_URL}${request.params.id}.json`);
-		let userInfo = await axios.get(`${API_PLAYER_INFO_URL}${user.data['profile-id']}`);
-		response.json(formatData(userInfo.data));
+		if (user.data.active === 'true') {
+			let userInfo = await axios.get(`${API_PLAYER_INFO_URL}${user.data['profile-id']}`);
+			response.json(formatData(userInfo.data));
+		}
+		response.json({error: 'Player not active'});
 	} catch (error) {
 		response.json({error: 'Player not found'});
 	}
 }));
 
-app.use(express.static('./'));
-
-app.listen(port, () => console.log(`Server starts on port ${port}!`))
+app.listen(port, () => console.log(`Api server starts on port ${port}!`))

@@ -2,27 +2,27 @@
 @import "mixins";
 
 .search__inner{
-	font-size: 2rem;
-	display: flex;
+	background-image: url('https://willelmadrileno.files.wordpress.com/2011/03/futbol-003.jpg');
 	justify-content: center;
 	padding: $base-unit * 5;
-	background-image: url('https://willelmadrileno.files.wordpress.com/2011/03/futbol-003.jpg');
 	background-size: cover;
+	font-size: 2rem;
+	display: flex;
 }
 .search__form {
-	min-width: 60%;
+	padding: $base-unit * 5 $base-unit * 10;
 	justify-content: space-between;
 	flex-direction: column;
 	align-items: center;
-	padding: $base-unit * 5 $base-unit * 10;
+	min-width: 60%;
 }
 .search__input {
 	padding: $base-unit $base-unit * 2;
+	margin-bottom: $base-unit;
+	border: 1px solid $lines;
 	text-align: center;
 	font-size: 1rem;
-	border: 1px solid $lines;
 	min-width: 50%;
-	margin-bottom: $base-unit;
 
 	&:focus {
 		outline: none;
@@ -30,9 +30,9 @@
 }
 
 .search__button {
-	background: $primary-color;
-	color: #ffffff;
-	font-size: 1rem;
 	padding: $base-unit $base-unit * 2;
+	background: $primary-color;
 	text-decoration: none;
+	font-size: 1rem;
+	color: #ffffff;
 }
