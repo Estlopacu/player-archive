@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+import {Observable} from '@rxjs/rx/observable';
+import {PlayersService} from '../players.service';
+import {filter} from '@rxjs/rx/observable/filter';
 
 @Component({
-  selector: 'app-search-form',
-  templateUrl: './search-form.component.html',
-  styleUrls: ['./search-form.component.scss']
+    selector: 'app-search-form',
+    templateUrl: './search-form.component.html',
+    styleUrls: ['./search-form.component.scss']
 })
 export class SearchFormComponent implements OnInit {
 
-  constructor() { }
+    private playersList: Observable<any>;
 
-  ngOnInit() {
-  }
+    constructor(private players: PlayersService) {
+    }
+
+    ngOnInit() {
+        this.players.set('fabio');
+    }
+
+    search(form) {
+        this.players.set(form);
+    }
 
 }

@@ -1,23 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'reset';
 @import 'variables';
+@import 'mixins';
 
 html {
 	font-size: $base-font-size;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	background-color: $white;
 }
 
-app-root{
+app-root {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 }
+
 .container {
-	margin: 0 $base-unit * 2;
+	padding: 0 $base-unit * 2;
 	display: flex;
 
 	@media (min-width: $desktop-breakpoint) {
-		margin: 0 $base-unit * 4;
+		padding: 0 $base-unit * 4;
 	}
+}
 
+.box {
+	display: flex;
+	background-color: $white;
+	@include boxShadow(0 2px 2px 0, rgba(0, 0, 0, 0.75));
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.8rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+h4 {
+	font-size: 1.3rem;
+}
+
+.strong {
+	font-weight: bold;
 }

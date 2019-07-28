@@ -1,8 +1,6 @@
-<div class="search--inner">
-	<form class="search--form" action="#">
-		<label for="search">
-			<span>Search</span>
-		</label>
-		<input class="search--input" type="text" name="search" id="search"/>
+<div class="search__inner container">
+	<form class="search__form box" #form="ngForm" (ngSubmit)="search(form.value.search)">
+		<input class="search__input" type="text" name="search" placeholder="Search for a player" ngModel/>
+		<input class="search__button" type="submit" value="Search"/>
 	</form>
 </div>

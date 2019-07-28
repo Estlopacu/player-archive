@@ -1,8 +1,12 @@
 @import "variables";
+@import "mixins";
 
 header, footer{
 	background-color: $primary-color;
 	padding: $base-unit * 2 0;
+}
+header {
+	@include boxShadow(0 2px 2px 0, rgba(0,0,0,0.75));
 }
 
 main {

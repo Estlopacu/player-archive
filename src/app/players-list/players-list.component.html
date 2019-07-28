@@ -1,1 +1,4 @@
-<p>players-list works!</p>
+<div class="playerlist container">
+	<p class="playerlist__message" *ngIf="player.error">Player Not found</p>
+	<app-player [player]="player" *ngIf="player.id"></app-player>
+</div>

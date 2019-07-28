@@ -1,0 +1,10 @@
+@import "variables";
+
+.playerlist {
+	margin-top: $base-unit * 5;
+	flex-direction: column;
+}
+
+.playerlist__message{
+	text-align: center;
+}

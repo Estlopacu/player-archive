@@ -1,12 +1,16 @@
 // Variables
+$background-color: #efefef;
 $base-unit: 8px;
-$base-font-size: 8px;
+$base-font-size: 16px;
 
 // Colors
 $primary-color: #32B846;
 $secondary-color: #020202;
 $tertiary-color: #0D2818;
 $white: #fff;
+$black: #000;
+$lines: darken( $primary-color, 20% );
 
 // Breakpoints
-$desktop-breakpoint: 768px;
+$desktop-breakpoint: 992px;
+$mobile-breakpoint: 768px;

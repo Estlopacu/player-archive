@@ -1,0 +1,71 @@
+@import "mixins";
+@import "variables";
+
+.player {
+	@include boxShadow(2px 2px 4px 2px, rgba(0, 0, 0, 0.75));
+	padding: $base-unit * 2;
+	margin-bottom: $base-unit * 2;
+	display: flex;
+}
+
+.player__basic {
+	img {
+		max-width: 100px;
+		border-radius: 50%;
+	}
+
+	h2 {
+		margin-top: $base-unit * 2;
+	}
+}
+
+.player__information {
+	flex-grow: 1;
+	flex-direction: column;
+
+	h4 {
+		margin-bottom: $base-unit;
+	}
+}
+
+.player__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.player__item {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex: 1 0 100%;
+	padding-bottom: $base-unit * 2;
+
+	@media (min-width: $mobile-breakpoint) {
+		flex: 1 0 33%;
+		flex-direction: column;
+	}
+
+	@media (min-width: $desktop-breakpoint) {
+		flex: 1 0 25%;
+		flex-direction: column;
+	}
+}
+
+.player__title {
+	padding: 0 $base-unit $base-unit;
+	color:$secondary-color;
+
+	@media (min-width: $mobile-breakpoint) {
+		padding: 0 0 $base-unit;
+	}
+}
+
+.player__stats--show{
+	padding: $base-unit 0;
+
+	a{
+		text-decoration: none;
+		color: $tertiary-color;
+	}
+}

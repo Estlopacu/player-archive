@@ -1,1 +1,36 @@
-<p>player works!</p>
+<div class="player container box">
+	<div class="player__basic">
+		<img [src]="player.profile.picture"
+			 alt="player image">
+		<h2>{{ player.id }}</h2>
+	</div>
+	<div class="player__information container">
+		<div>
+			<h4>Profile</h4>
+			<ul class="player__list">
+				<li class="player__item" *ngIf="player.profile.age">
+					<span class="player__title strong ">Age</span>
+					<span>{{player.profile.age}}</span>
+				</li>
+				<li class="player__item" *ngIf="player.profile.team">
+					<span class="player__title strong">Role</span>
+					<span>{{player.profile.team}}</span>
+				</li>
+				<li class="player__item" *ngIf="player.profile.role">
+					<span class="player__title strong">Role</span>
+					<span>{{player.profile.role}}</span>
+				</li>
+			</ul>
+		</div>
+		<p class="player__stats--show"><a href="#" (click)="showStats = !showStats">{{showStats ? "Hide stats" : "Show stats"}}</a></p>
+		<div *ngIf="showStats">
+			<h4>Stats</h4>
+			<ul class="player__list">
+				<li class="player__item" *ngFor="let stat of player.stats; index as nameStat">
+					<span class="player__title strong">{{stat.stat}}</span>
+					<span>{{stat.value}}</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
