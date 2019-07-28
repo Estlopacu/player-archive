@@ -1,9 +1,3 @@
-export interface PlayerBasic {
-    id: string;
-    active: string;
-    profile: string;
-}
-
 export interface PlayerInfo {
     id: string;
     profile: {
@@ -13,4 +7,4 @@ export interface PlayerInfo {
         picture: string;
     };
     stats: any;
-}
+};
