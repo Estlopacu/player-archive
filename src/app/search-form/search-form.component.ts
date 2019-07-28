@@ -15,12 +15,10 @@ export class SearchFormComponent implements OnInit {
     constructor(private players: PlayersService) {
     }
 
-    ngOnInit() {
-        this.players.set('fabio');
-    }
+    ngOnInit() {}
 
     search(form) {
-        this.players.set(form);
+        this.players.set(form.trim());
     }
 
 }

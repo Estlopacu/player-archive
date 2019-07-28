@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Constants} from './utils/constants';
 import {Observable, BehaviorSubject} from 'rxjs';
-
-const startCase = require('lodash.startcase');
+import {PlayerBasic, PlayerInfo} from './player';
+// const startCase = require('lodash.startcase');
 
 @Injectable({
     providedIn: 'root'
@@ -16,18 +16,18 @@ export class PlayersService {
     constructor(private http: HttpClient) {
     }
 
-    private getPlayer(name: string): Observable<any> {
-        return this.http.get(Constants.getPlayerURL(name));
+    private getPlayer(name: string): Observable<PlayerBasic> {
+        return this.http.get<PlayerBasic>(Constants.getPlayerURL(name));
     }
 
-    private getInfo(id): Observable<any> {
-        return this.http.get(Constants.getPlayerInfoURL(id));
+    private getInfo(id): Observable<PlayerInfo> {
+        return this.http.get<PlayerInfo>(Constants.getPlayerInfoURL(id));
     }
 
     private formatData(playerInfo) {
         const newStats = [];
         Object.entries(playerInfo.stats).forEach(([key, value]) => newStats.push(
-            {stat: startCase(key), value}));
+            {stat: key, value}));
         playerInfo.stats = newStats;
         return playerInfo;
     }
@@ -36,9 +36,11 @@ export class PlayersService {
         this.getPlayer(name).subscribe(player => {
                 if (player.active === 'true') {
                     this.getInfo(player['profile-id']).subscribe(playerInfo => {
+                        console.log(playerInfo)
                         this.playersSource.next(this.formatData(playerInfo));
                     });
                 }
+                this.playersSource.next({error: 'No player found'});
             },
             error => {
                 this.playersSource.next({error: 'No player found'});
