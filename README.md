@@ -5,7 +5,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Node server uses [Expressjs](https://expressjs.com/).
 
 ## Starting
-To start the app use `npm run start` to run concurrently the dev server and API server. Remember to have free the ports `3000` and `4200` of your localhost.
+To start first run `npm install` to install all required packages. 
+
+Run `npm run start` to run concurrently the dev server and API server. Remember to have free the ports `3000` and `4200` of your localhost.
 
 Start node server serving the API using `npm run startApiServer`. API url present on `http://localhost:3000/`, paths present on `./server/index.js`
 
