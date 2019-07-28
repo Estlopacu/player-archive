@@ -9,7 +9,7 @@ import {PlayersService} from '../players.service';
 })
 export class PlayersListComponent implements OnInit {
 
-    private player: Observable<any>;
+    public player: Observable<any>;
 
     constructor(private players: PlayersService) {
     }

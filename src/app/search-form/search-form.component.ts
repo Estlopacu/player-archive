@@ -1,7 +1,7 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from '@rxjs/rx/observable';
 import {PlayersService} from '../players.service';
-import {filter} from '@rxjs/rx/observable/filter';
+import {PlayerInfo} from '../player';
 
 @Component({
     selector: 'app-search-form',
@@ -10,12 +10,13 @@ import {filter} from '@rxjs/rx/observable/filter';
 })
 export class SearchFormComponent implements OnInit {
 
-    private playersList: Observable<any>;
+    private playersList: Observable<PlayerInfo>;
 
     constructor(private players: PlayersService) {
     }
 
-    ngOnInit() {}
+    ngOnInit() {
+    }
 
     search(form) {
         this.players.set(form.trim());

@@ -9,6 +9,8 @@ export class PlayerComponent implements OnInit {
 
     @Input() player: any;
 
+    public showStats: boolean;
+
     constructor() {}
 
     ngOnInit() {}
