@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
     "@rxjs/rx": "^4.1.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "lodash.startcase": "^4.4.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
